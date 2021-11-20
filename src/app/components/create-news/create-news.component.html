@@ -1,1 +1,32 @@
-<p>create-news works!</p>
+<div class="col-md-6 offset-md-3">
+  <h3> Create News </h3>
+  <form (ngSubmit) = "onSubmit()">
+
+      <div class="form-group">
+          <label> Subject</label>
+          <input type="text" class ="form-control" id = "newsSubject"
+              [(ngModel)] = "news.subject" name = "newsSubject">
+      </div>
+
+      <div class="form-group">
+          <label>Content</label>
+          <input type="text" class ="form-control" id = "newsContent"
+              [(ngModel)] = "news.content" name = "newsContent">
+      </div>
+
+      <div class="form-group">
+          <label> Link</label>
+          <input type="text" class ="form-control" id = "newsLink"
+              [(ngModel)] = "news.news_link" name = "newsLink">
+      </div>
+
+      <div class="form-group">
+        <label> Validity Date</label>
+        <input type="text" class ="form-control" id = "newsValidity"
+            [(ngModel)] = "news.validity_date" name = "newsValidity">
+    </div>
+
+      <button  class = "btn btn-success" type ="submit">Submit</button>
+
+  </form>
+  </div>

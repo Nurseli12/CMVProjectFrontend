@@ -1,6 +1,6 @@
 <div class="btn-group">
   <div >
-    <button  class = "btn btn-info"> New Record</button>
+    <button class = "btn btn-info"> <a routerLink="create-news" routerLinkActive="active" class="nav-link" >Add News</a></button>
   </div>
 </div>
 <table mdbTable class="table">
@@ -20,7 +20,7 @@
       <td>{{item.validity_date}}</td>
       <td>
         <button (click) = "updateNews(item.id)"  class = "btn btn-info"> Update</button>
-        <button (click) = "deleteNews(item.id) class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+        <button (click) = "deleteNews(item.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
         <button (click) = "newsDetails(item.id)"  class = "btn btn-info" style="margin-left: 10px"> View</button>
     </td>
     </tr>
