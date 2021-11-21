@@ -1,0 +1,49 @@
+<div class="col-md-6 offset-md-3">
+  <h3>Update Advertisement</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label> Subject</label>
+      <input
+        type="text"
+        class="form-control"
+        id="advertSubject"
+        [(ngModel)]="advertisement.subject"
+        name="advertSubject"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Content</label>
+      <input
+        type="text"
+        class="form-control"
+        id="advertisementContent"
+        [(ngModel)]="advertisement.content"
+        name="advertisementContent"
+      />
+    </div>
+
+    <div class="form-group">
+      <label> Photo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="advertisementphoto"
+        [(ngModel)]="advertisement.photo"
+        name="advertisementphoto"
+      />
+    </div>
+    <div class="form-group">
+      <label> Validity Date</label>
+      <input
+        type="text"
+        class="form-control"
+        id="advertisementValidity"
+        [(ngModel)]="advertisement.validity_date"
+        name="advertisementValidity"
+      />
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>

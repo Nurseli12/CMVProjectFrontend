@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Advertisement } from 'src/app/models/advertisement';
 import { News } from 'src/app/models/news';
 import { NewsService } from 'src/app/services/news.service';
 
@@ -11,7 +12,7 @@ import { NewsService } from 'src/app/services/news.service';
 export class UpdateNewsComponent implements OnInit {
 
   id:number;
-  news:News = new News();
+  advertisement:Advertisement = new Advertisement();
   constructor(private newsService:NewsService,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -19,20 +20,20 @@ export class UpdateNewsComponent implements OnInit {
     ngOnInit(): void {
       this.id = this.route.snapshot.params['id'];
 
-      this.newsService.getNewsById(this.id).subscribe(response => {
-        this.news = response;
+      this.newsService.getAdvertById(this.id).subscribe(response => {
+        this.advertisement = response;
       }, error => console.log(error));
     }
 
     onSubmit(){
-      this.newsService.updateNews(this.id, this.news).subscribe( response=>{
-        this.goToNewsList();
+      this.newsService.updateAdvert(this.id, this.advertisement).subscribe( response=>{
+        this.goToAdvertList();
       }
       , error => console.log(error));
     }
 
-    goToNewsList(){
-      this.router.navigate(['/news']);
+    goToAdvertList(){
+      this.router.navigate(['/advertisement']);
     }
 
 }
